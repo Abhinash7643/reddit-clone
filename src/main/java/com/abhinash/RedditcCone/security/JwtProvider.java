@@ -36,6 +36,7 @@ public class JwtProvider {
 
     }
 
+//    Jwts.parserBuilder().setSigningKey(getPublicKey()).build().parseClaimsJws(jwt);
     public String generateToken(Authentication authentication) {
         User principal = (User) authentication.getPrincipal();
         return Jwts.builder()
