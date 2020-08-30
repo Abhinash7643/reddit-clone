@@ -2,12 +2,15 @@ package com.abhinash.RedditcCone.controller;
 
 import com.abhinash.RedditcCone.dto.AuthenticationResponse;
 import com.abhinash.RedditcCone.dto.LoginRequest;
+import com.abhinash.RedditcCone.dto.RefreshTokenRequest;
 import com.abhinash.RedditcCone.dto.RegisterRequest;
 import com.abhinash.RedditcCone.service.AuthService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 import static org.springframework.http.HttpStatus.OK;
 
@@ -33,5 +36,10 @@ public class AuthController {
     @PostMapping("/login")
     public AuthenticationResponse login(@RequestBody LoginRequest loginRequest) {
         return authService.login(loginRequest);
+    }
+
+    @PostMapping("/refresh/token")
+    public AuthenticationResponse refreshTokens(@Valid @RequestBody RefreshTokenRequest refreshTokenRequest) {
+        return authService.refreshToken(refreshTokenRequest);
     }
 }

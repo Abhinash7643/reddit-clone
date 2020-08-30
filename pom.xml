@@ -94,6 +94,15 @@
 			<artifactId>javaee-api</artifactId>
 			<version>8.0</version>
 		</dependency>
+
+		<!-- For Displaying time as Relative Time Ago ("Posted 1 Day ago"),
+         as this is a Kotlin library, we also need Kotlin runtime libraries-->
+		<dependency>
+			<groupId>com.github.marlonlom</groupId>
+			<artifactId>timeago</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
